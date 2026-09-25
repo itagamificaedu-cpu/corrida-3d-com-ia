@@ -176,7 +176,7 @@ const estadoCarro = {
   aceleracao: 38,
   frenagem: 34,
   atrito: 14,
-  velocidadeGiro: 2.6,
+  velocidadeGiro: 3.6,
   turboAte: 0, // timestamp (ms) até quando o turbo está ativo
   bateuAntes: false,
 };
