@@ -172,8 +172,8 @@ cena.add(carro);
 // ---------- Estado da física ----------
 const estadoCarro = {
   velocidade: 0,
-  velocidadeMax: 32,
-  aceleracao: 22,
+  velocidadeMax: 44,
+  aceleracao: 38,
   frenagem: 34,
   atrito: 14,
   velocidadeGiro: 2.6,
