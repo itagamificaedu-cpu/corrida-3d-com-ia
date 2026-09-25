@@ -1,0 +1,15 @@
+{
+  "name": "corrida-3d-com-ia",
+  "version": "1.0.0",
+  "description": "Jogo de corrida 3D no navegador, feito com JavaScript e Three.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "three": "^0.160.0"
+  }
+}
