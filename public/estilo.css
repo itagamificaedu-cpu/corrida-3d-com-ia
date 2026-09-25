@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#tela-jogo {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+#canvas-jogo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+/* HUD */
+
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px 20px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  z-index: 5;
+}
+
+#hud-voltas {
+  font-size: 20px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 8px 14px;
+  border-radius: 10px;
+}
+
+#hud-tempo {
+  font-size: 22px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 8px 14px;
+  border-radius: 10px;
+}
+
+#hud-velocidade {
+  font-size: 18px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 8px 14px;
+  border-radius: 10px;
+}
+
+/* Telas de início / fim */
+
+.sobreposicao {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(180deg, rgba(10, 20, 40, 0.85), rgba(5, 10, 25, 0.95));
+  z-index: 20;
+  padding: 24px;
+}
+
+.sobreposicao h1 {
+  font-size: clamp(28px, 6vw, 44px);
+  margin-bottom: 16px;
+}
+
+.sobreposicao p {
+  font-size: clamp(14px, 3vw, 18px);
+  opacity: 0.9;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.dica-controles {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-top: 24px;
+}
+
+.sobreposicao button {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffb703, #fb8500);
+  color: #1a1a1a;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(251, 133, 0, 0.5);
+  transition: transform 0.15s ease;
+}
+
+.sobreposicao button:active {
+  transform: scale(0.95);
+}
+
+.escondido {
+  display: none !important;
+}
+
+/* Controles de toque (celular) */
+
+#controles-toque {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 18px;
+  z-index: 15;
+  pointer-events: none;
+}
+
+#controles-direcao,
+#controles-pedal {
+  display: flex;
+  gap: 14px;
+  pointer-events: auto;
+}
+
+.botao-toque {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  touch-action: none;
+}
+
+.botao-toque:active {
+  background: rgba(255, 183, 3, 0.55);
+}
+
+#botao-acelerar {
+  width: 84px;
+  height: 84px;
+  font-size: 32px;
+}
+
+@media (min-width: 900px) {
+  #controles-toque {
+    display: none !important;
+  }
+}
