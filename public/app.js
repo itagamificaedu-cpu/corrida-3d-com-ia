@@ -311,8 +311,10 @@ function passoFisica(dt) {
   estadoCarro.velocidade = Math.max(-velMax * 0.5, Math.min(velMax, estadoCarro.velocidade));
 
   const direcaoGiro = estadoCarro.velocidade >= 0 ? 1 : -1;
-  if (entrada.esquerda) carro.rotation.y += estadoCarro.velocidadeGiro * dt * direcaoGiro;
-  if (entrada.direita) carro.rotation.y -= estadoCarro.velocidadeGiro * dt * direcaoGiro;
+  if (Math.abs(estadoCarro.velocidade) > 0.5) {
+    if (entrada.esquerda) carro.rotation.y += estadoCarro.velocidadeGiro * dt * direcaoGiro;
+    if (entrada.direita) carro.rotation.y -= estadoCarro.velocidadeGiro * dt * direcaoGiro;
+  }
 
   const novoX = carro.position.x + Math.sin(carro.rotation.y) * estadoCarro.velocidade * dt;
   const novoZ = carro.position.z + Math.cos(carro.rotation.y) * estadoCarro.velocidade * dt;
